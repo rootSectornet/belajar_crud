@@ -1,6 +1,6 @@
 'use strict'
 
-let  student = require('./domains/student')
+let  student = require('../domains/student')
 
 let studentrepository = function(db){
 	this.db = db
@@ -50,7 +50,7 @@ studentrepository.prototype = {
 				errCb(err)
 			}
 			if (!results) {
-				cb('Data dengan code ${code}, tidak di temukan')
+				cb('Data dengan code , tidak di temukan')
 			}else{
 				let s = results[0]
 				let tampil = new student(s.code, s.name, s.department, s.age)
@@ -61,7 +61,7 @@ studentrepository.prototype = {
 
 	findAll : function(cb, errCb){
 		let db = this.db
-		let query - 'SELECT * FROM student'
+		let query = 'SELECT * FROM student'
 		db.query(query, (err, results, fields) => {
 			if (err) {
 				errCb(err)

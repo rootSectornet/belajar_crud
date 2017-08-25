@@ -3,7 +3,7 @@
 let mysql = require('mysql')
 
 let connection = mysql.createConnection({
-	host : 'lolahost',
+	host : 'localhost',
 	user : 'root',
 	password : 'root',
 	database : 'belajar_node1'
